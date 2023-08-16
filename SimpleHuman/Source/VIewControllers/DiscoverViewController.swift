@@ -23,7 +23,7 @@ class DiscoverViewController: UIViewController {
         var lastView: UIView?
         let numViews = 3
         for i in 0 ..< numViews {
-            let pageView = UIView()
+            let pageView = DiscoverItemVideoView()
             scrollView.addSubview(pageView)
             pageView.translatesAutoresizingMaskIntoConstraints = false
             pageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
@@ -41,11 +41,54 @@ class DiscoverViewController: UIViewController {
                 pageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
             }
             
-            pageView.backgroundColor = .random
+//            pageView.backgroundColor = .random
             
             lastView = pageView
         }
     }
+}
+
+import AVKit
+
+class DiscoverItemVideoView: UIView {
+    
+    private var player: AVPlayer?
+    private var playerLayer: AVPlayerLayer?
+    
+    init() {
+        super.init(frame: .zero)
+        self.setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.playerLayer?.frame = self.bounds
+    }
+    
+    private func setupView() {
+        self.backgroundColor = .black
+        
+        let player = AVPlayer()
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = .resizeAspectFill
+        playerLayer.frame = self.bounds
+        self.layer.addSublayer(playerLayer)
+        self.player = player
+        self.playerLayer = playerLayer
+        
+        self.update(data: "")
+    }
+    
+    private func update(data: String) {
+        let videoURL = URL(string: "https://cdn.shopify.com/videos/c/o/v/d84f8d763a554aad966ecb70aac401df.mp4")!
+        self.player?.replaceCurrentItem(with: AVPlayerItem(url: videoURL))
+        self.player?.play()
+    }
+    
 }
 
 
