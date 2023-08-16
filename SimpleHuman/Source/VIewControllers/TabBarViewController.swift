@@ -31,7 +31,7 @@ class TabBarViewController: UITabBarController {
         let discoverNavigationController = BaseNavigationController(rootViewController: discoverViewController)
         discoverViewController.tabBarItem = TabBarItem(type: .discover)
         
-        let refillViewController = UIViewController()
+        let refillViewController = RefillViewController()
         let refillNavigationController = BaseNavigationController(rootViewController: refillViewController)
         refillViewController.tabBarItem = TabBarItem(type: .refill)
 

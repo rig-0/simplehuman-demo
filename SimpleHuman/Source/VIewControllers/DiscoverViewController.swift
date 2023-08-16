@@ -12,5 +12,4 @@ class DiscoverViewController: UIViewController {
         self.title = "discover"
         self.tabBarItem.title = ""
     }
-    
 }
