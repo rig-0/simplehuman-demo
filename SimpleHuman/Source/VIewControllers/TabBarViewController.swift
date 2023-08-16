@@ -37,7 +37,7 @@ class TabBarViewController: UITabBarController {
 
         let accountViewController = AccountViewController()
         let accountNavigationController = BaseNavigationController(rootViewController: accountViewController)
-        accountNavigationController.tabBarItem = TabBarItem(type: .account)
+        accountViewController.tabBarItem = TabBarItem(type: .account)
         
         self.viewControllers = [
             discoverNavigationController,
