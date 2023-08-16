@@ -24,6 +24,7 @@
 		C7CCB26E2A8D8AAE0088638D /* RefillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB26D2A8D8AAE0088638D /* RefillViewController.swift */; };
 		C7CCB2712A8D8D350088638D /* DataItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2702A8D8D350088638D /* DataItemCell.swift */; };
 		C7CCB2732A8D90D90088638D /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2722A8D90D90088638D /* UIColor+AppColors.swift */; };
+		C7CCB2752A8D91020088638D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2742A8D91020088638D /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C7CCB26D2A8D8AAE0088638D /* RefillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefillViewController.swift; sourceTree = "<group>"; };
 		C7CCB2702A8D8D350088638D /* DataItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataItemCell.swift; sourceTree = "<group>"; };
 		C7CCB2722A8D90D90088638D /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		C7CCB2742A8D91020088638D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				C7CCB2662A8D7E4D0088638D /* BaseNavigationController.swift */,
 				C7CCB2682A8D804E0088638D /* DiscoverViewController.swift */,
 				C7CCB26D2A8D8AAE0088638D /* RefillViewController.swift */,
+				C7CCB2742A8D91020088638D /* AccountViewController.swift */,
 			);
 			path = VIewControllers;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				C7CCB2672A8D7E4D0088638D /* BaseNavigationController.swift in Sources */,
 				C7CCB2712A8D8D350088638D /* DataItemCell.swift in Sources */,
 				C7CCB2322A8D72F70088638D /* SceneDelegate.swift in Sources */,
+				C7CCB2752A8D91020088638D /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

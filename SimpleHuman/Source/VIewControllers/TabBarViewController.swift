@@ -35,7 +35,7 @@ class TabBarViewController: UITabBarController {
         let refillNavigationController = BaseNavigationController(rootViewController: refillViewController)
         refillViewController.tabBarItem = TabBarItem(type: .refill)
 
-        let accountViewController = UIViewController()
+        let accountViewController = AccountViewController()
         let accountNavigationController = BaseNavigationController(rootViewController: accountViewController)
         accountNavigationController.tabBarItem = TabBarItem(type: .account)
         

@@ -1,28 +1,24 @@
 //
-//  RefillViewController.swift
+//  AccountViewController.swift
 //  ©️ 2023 0100
 //
 
 import UIKit
 
-enum RefillType: String, CaseIterable {
-    case trashLiners = "trash liners"
-    case handSoap = "hand soap"
-    case dishSoap = "dish soap"
-    case odorsorbPods = "odorsorb pods"
-    case cleaningTablets = "cleaning tablets"
-    case paperTowels = "paper towels"
-    case handSanitizer = "hand sanitizer"
+enum AccountRowType: String, CaseIterable {
+    case orders = "my orders"
+    case accountInformation = "account information"
+    case more = "more"
 }
 
-class RefillViewController: UIViewController {
+class AccountViewController: UIViewController {
     
     private var tableView: UITableView!
-    private var rowItems = RefillType.allCases
+    private var rowItems = AccountRowType.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "refill+"
+        self.title = "my information"
         self.tabBarItem.title = ""
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.setupView()
@@ -45,7 +41,7 @@ class RefillViewController: UIViewController {
     }
 }
 
-extension RefillViewController: UITableViewDataSource {
+extension AccountViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -67,7 +63,7 @@ extension RefillViewController: UITableViewDataSource {
     }
 }
 
-extension RefillViewController: UITableViewDelegate {
+extension AccountViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
