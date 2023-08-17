@@ -11,6 +11,7 @@ class DiscoverItemVideoView: UIView {
     private var player: AVPlayer?
     private var playerLayer: AVPlayerLayer?
     private var productLabel: UILabel?
+    private var ctaButton: UIButton?
     
     init() {
         super.init(frame: .zero)
@@ -41,13 +42,27 @@ class DiscoverItemVideoView: UIView {
         let productLabel = UILabel()
         productLabel.numberOfLines = 0
         productLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 40)
-        
         self.addSubview(productLabel)
         productLabel.translatesAutoresizingMaskIntoConstraints = false
         productLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
         productLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
         productLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.productLabel = productLabel
+                
+        var config = UIButton.Configuration.plain()
+        config.title = "shop now"
+        config.titleAlignment = .center
+        config.titlePadding = 10.0
+        config.baseForegroundColor = .white
+        config.background.backgroundColor = .clear
+        config.background.strokeColor = .systemRed
+        config.background.strokeWidth = 1
+        let button = UIButton(configuration: config)
+        self.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.bottomAnchor.constraint(equalTo: productLabel.topAnchor, constant: -15).isActive = true
+        button.leadingAnchor.constraint(equalTo: productLabel.leadingAnchor).isActive = true
+        self.ctaButton = button
     }
     
     public func update(item: DiscoverItem) {
@@ -60,6 +75,10 @@ class DiscoverItemVideoView: UIView {
         self.productLabel?.text = item.productTextBlock?.text
         self.productLabel?.textColor = UIColor(hex: item.productTextBlock?.style.textColor)
         self.productLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: item.productTextBlock?.style.fontSize ?? 0)
+        
+        self.ctaButton?.configuration?.baseForegroundColor = UIColor(hex: item.ctaTextBlock?.style.textColor)
+        self.ctaButton?.configuration?.background.strokeColor = UIColor(hex: item.ctaTextBlock?.style.borderColor)
+        self.ctaButton?.configuration?.attributedTitle = AttributedString(item.ctaTextBlock?.text ?? "", attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: "HelveticaNeue", size: item.ctaTextBlock?.style.fontSize ?? 0)!]))
     }
     
     func loopVideo(videoPlayer: AVPlayer?) {

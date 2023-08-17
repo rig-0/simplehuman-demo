@@ -40,6 +40,10 @@ struct DiscoverItem: Codable, Equatable {
         return self.blocks.first?.label.first(where: { $0.styleType == "normal" })
     }
     
+    var ctaTextBlock: BlockLabel? {
+        return self.blocks.first?.label.first(where: { $0.styleType == "cta" })
+    }
+    
     static func == (lhs: DiscoverItem, rhs: DiscoverItem) -> Bool {
         return lhs.name == rhs.name
     }
@@ -69,10 +73,12 @@ struct BlockLabel: Codable {
 struct BlockStyle: Codable {
     var textColor: String
     var fontSize: CGFloat
+    var borderColor: String?
     
     enum CodingKeys : String, CodingKey {
         case textColor = "text-color"
         case fontSize = "font-size"
+        case borderColor = "border-color"
     }
 }
 
