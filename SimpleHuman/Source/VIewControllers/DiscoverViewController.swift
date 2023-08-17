@@ -20,9 +20,9 @@ class DiscoverViewController: UIViewController {
         scrollView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         
+        let data = DiscoverFeedParser.fetch()
         var lastView: UIView?
-        let numViews = 3
-        for i in 0 ..< numViews {
+        for item in data {
             let pageView = DiscoverItemVideoView()
             scrollView.addSubview(pageView)
             pageView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,11 +37,11 @@ class DiscoverViewController: UIViewController {
                 pageView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
             }
             
-            if i == (numViews - 1) {
+            if item == data.last {
                 pageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
             }
             
-//            pageView.backgroundColor = .random
+            pageView.update(item: item)
             
             lastView = pageView
         }
@@ -79,14 +79,13 @@ class DiscoverItemVideoView: UIView {
         self.layer.addSublayer(playerLayer)
         self.player = player
         self.playerLayer = playerLayer
-        
-        self.update(data: "")
     }
     
-    private func update(data: String) {
-        let videoURL = URL(string: "https://cdn.shopify.com/videos/c/o/v/d84f8d763a554aad966ecb70aac401df.mp4")!
-        self.player?.replaceCurrentItem(with: AVPlayerItem(url: videoURL))
-        self.player?.play()
+    public func update(item: DiscoverItem) {
+        if let videoURL = item.videoURL {
+            self.player?.replaceCurrentItem(with: AVPlayerItem(url: videoURL))
+            self.player?.play()
+        }
     }
     
 }
