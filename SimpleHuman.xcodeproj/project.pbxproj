@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C7CCB2302A8D72F70088638D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB22F2A8D72F70088638D /* AppDelegate.swift */; };
 		C7CCB2322A8D72F70088638D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2312A8D72F70088638D /* SceneDelegate.swift */; };
-		C7CCB2342A8D72F70088638D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2332A8D72F70088638D /* ViewController.swift */; };
 		C7CCB2372A8D72F70088638D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7CCB2352A8D72F70088638D /* Main.storyboard */; };
 		C7CCB2392A8D72F80088638D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CCB2382A8D72F80088638D /* Assets.xcassets */; };
 		C7CCB23C2A8D72F80088638D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7CCB23A2A8D72F80088638D /* LaunchScreen.storyboard */; };
@@ -28,6 +27,7 @@
 		C7CCB2772A8D98DD0088638D /* Bundle+DecodeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2762A8D98DD0088638D /* Bundle+DecodeJSON.swift */; };
 		C7CCB27A2A8D990F0088638D /* DiscoverFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2792A8D990F0088638D /* DiscoverFeed.swift */; };
 		C7CCB27C2A8DA44C0088638D /* DiscoverItemVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB27B2A8DA44C0088638D /* DiscoverItemVideoView.swift */; };
+		C7CCB27E2A8DB1CB0088638D /* DiscoverFeedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB27D2A8DB1CB0088638D /* DiscoverFeedScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,6 @@
 		C7CCB22C2A8D72F70088638D /* SimpleHuman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleHuman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CCB22F2A8D72F70088638D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7CCB2312A8D72F70088638D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C7CCB2332A8D72F70088638D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C7CCB2362A8D72F70088638D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C7CCB2382A8D72F80088638D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7CCB23B2A8D72F80088638D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		C7CCB2762A8D98DD0088638D /* Bundle+DecodeJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+DecodeJSON.swift"; sourceTree = "<group>"; };
 		C7CCB2792A8D990F0088638D /* DiscoverFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverFeed.swift; sourceTree = "<group>"; };
 		C7CCB27B2A8DA44C0088638D /* DiscoverItemVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverItemVideoView.swift; sourceTree = "<group>"; };
+		C7CCB27D2A8DB1CB0088638D /* DiscoverFeedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverFeedScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,6 @@
 				C7CCB25F2A8D78D40088638D /* Resources */,
 				C7CCB22F2A8D72F70088638D /* AppDelegate.swift */,
 				C7CCB2312A8D72F70088638D /* SceneDelegate.swift */,
-				C7CCB2332A8D72F70088638D /* ViewController.swift */,
 				C7CCB2352A8D72F70088638D /* Main.storyboard */,
 				C7CCB2382A8D72F80088638D /* Assets.xcassets */,
 				C7CCB23A2A8D72F80088638D /* LaunchScreen.storyboard */,
@@ -164,10 +163,10 @@
 		C7CCB2622A8D7D0B0088638D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C7CCB2782A8D98FB0088638D /* Models */,
-				C7CCB26F2A8D8D230088638D /* Views */,
 				C7CCB26A2A8D87870088638D /* Extensions */,
+				C7CCB2782A8D98FB0088638D /* Models */,
 				C7CCB2632A8D7D140088638D /* VIewControllers */,
+				C7CCB26F2A8D8D230088638D /* Views */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -175,11 +174,11 @@
 		C7CCB2632A8D7D140088638D /* VIewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C7CCB2642A8D7D1F0088638D /* TabBarViewController.swift */,
+				C7CCB2742A8D91020088638D /* AccountViewController.swift */,
 				C7CCB2662A8D7E4D0088638D /* BaseNavigationController.swift */,
 				C7CCB2682A8D804E0088638D /* DiscoverViewController.swift */,
 				C7CCB26D2A8D8AAE0088638D /* RefillViewController.swift */,
-				C7CCB2742A8D91020088638D /* AccountViewController.swift */,
+				C7CCB2642A8D7D1F0088638D /* TabBarViewController.swift */,
 			);
 			path = VIewControllers;
 			sourceTree = "<group>";
@@ -187,9 +186,9 @@
 		C7CCB26A2A8D87870088638D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C7CCB26B2A8D87940088638D /* UIImage+AppImages.swift */,
-				C7CCB2722A8D90D90088638D /* UIColor+AppColors.swift */,
 				C7CCB2762A8D98DD0088638D /* Bundle+DecodeJSON.swift */,
+				C7CCB2722A8D90D90088638D /* UIColor+AppColors.swift */,
+				C7CCB26B2A8D87940088638D /* UIImage+AppImages.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				C7CCB2702A8D8D350088638D /* DataItemCell.swift */,
+				C7CCB27D2A8DB1CB0088638D /* DiscoverFeedScrollView.swift */,
+				C7CCB27B2A8DA44C0088638D /* DiscoverItemVideoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				C7CCB2792A8D990F0088638D /* DiscoverFeed.swift */,
-				C7CCB27B2A8DA44C0088638D /* DiscoverItemVideoView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 				C7CCB2652A8D7D1F0088638D /* TabBarViewController.swift in Sources */,
 				C7CCB26E2A8D8AAE0088638D /* RefillViewController.swift in Sources */,
 				C7CCB27C2A8DA44C0088638D /* DiscoverItemVideoView.swift in Sources */,
-				C7CCB2342A8D72F70088638D /* ViewController.swift in Sources */,
+				C7CCB27E2A8DB1CB0088638D /* DiscoverFeedScrollView.swift in Sources */,
 				C7CCB27A2A8D990F0088638D /* DiscoverFeed.swift in Sources */,
 				C7CCB2772A8D98DD0088638D /* Bundle+DecodeJSON.swift in Sources */,
 				C7CCB2302A8D72F70088638D /* AppDelegate.swift in Sources */,
