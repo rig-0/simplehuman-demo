@@ -27,6 +27,7 @@
 		C7CCB2752A8D91020088638D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2742A8D91020088638D /* AccountViewController.swift */; };
 		C7CCB2772A8D98DD0088638D /* Bundle+DecodeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2762A8D98DD0088638D /* Bundle+DecodeJSON.swift */; };
 		C7CCB27A2A8D990F0088638D /* DiscoverFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB2792A8D990F0088638D /* DiscoverFeed.swift */; };
+		C7CCB27C2A8DA44C0088638D /* DiscoverItemVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCB27B2A8DA44C0088638D /* DiscoverItemVideoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		C7CCB2742A8D91020088638D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		C7CCB2762A8D98DD0088638D /* Bundle+DecodeJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+DecodeJSON.swift"; sourceTree = "<group>"; };
 		C7CCB2792A8D990F0088638D /* DiscoverFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverFeed.swift; sourceTree = "<group>"; };
+		C7CCB27B2A8DA44C0088638D /* DiscoverItemVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverItemVideoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				C7CCB2792A8D990F0088638D /* DiscoverFeed.swift */,
+				C7CCB27B2A8DA44C0088638D /* DiscoverItemVideoView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				C7CCB2732A8D90D90088638D /* UIColor+AppColors.swift in Sources */,
 				C7CCB2652A8D7D1F0088638D /* TabBarViewController.swift in Sources */,
 				C7CCB26E2A8D8AAE0088638D /* RefillViewController.swift in Sources */,
+				C7CCB27C2A8DA44C0088638D /* DiscoverItemVideoView.swift in Sources */,
 				C7CCB2342A8D72F70088638D /* ViewController.swift in Sources */,
 				C7CCB27A2A8D990F0088638D /* DiscoverFeed.swift in Sources */,
 				C7CCB2772A8D98DD0088638D /* Bundle+DecodeJSON.swift in Sources */,

@@ -23,25 +23,6 @@ struct Metafield: Codable {
 }
 
 struct DiscoverItem: Codable, Equatable {
-    struct Blocks: Codable {
-        struct BlockVideo: Codable {
-            var src: String
-        }
-        
-        struct BlockLabel: Codable {
-            var text: String
-            var styleType: String
-            
-            enum CodingKeys : String, CodingKey {
-                case text = "text"
-                case styleType = "style-type"
-            }
-        }
-        
-        var video: [BlockVideo]
-        var label: [BlockLabel]
-    }
-    
     var order: Int
     var name: String
     var blocks: [Blocks]
@@ -55,10 +36,46 @@ struct DiscoverItem: Codable, Equatable {
         return nil
     }
     
+    var productTextBlock: BlockLabel? {
+        return self.blocks.first?.label.first(where: { $0.styleType == "normal" })
+    }
+    
     static func == (lhs: DiscoverItem, rhs: DiscoverItem) -> Bool {
         return lhs.name == rhs.name
     }
 }
+
+struct Blocks: Codable {
+    var video: [BlockVideo]
+    var label: [BlockLabel]
+}
+
+struct BlockVideo: Codable {
+    var src: String
+}
+
+struct BlockLabel: Codable {
+    var text: String
+    var styleType: String
+    var style: BlockStyle
+    
+    enum CodingKeys : String, CodingKey {
+        case text = "text"
+        case styleType = "style-type"
+        case style = "style"
+    }
+}
+
+struct BlockStyle: Codable {
+    var textColor: String
+    var fontSize: CGFloat
+    
+    enum CodingKeys : String, CodingKey {
+        case textColor = "text-color"
+        case fontSize = "font-size"
+    }
+}
+
 
 class DiscoverFeedParser {
     static func fetch() -> [DiscoverItem] {
